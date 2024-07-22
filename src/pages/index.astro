@@ -2,11 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import helloWorld from "../contracts/hello_world";
+import ConnectFreighter from '../components/ConnectFreighter.astro';
+import Counter from '../components/Counter.astro';
+
 const { result } = await helloWorld.hello({ to: "Fed" });
 const greeting = result.join(" ");
 ---
 
 <script is:inline>var global = global || window;</script>
+
 <Layout title={greeting}>
 	<main>
 		<svg
@@ -37,12 +41,15 @@ const greeting = result.join(" ");
 				</linearGradient>
 			</defs>
 		</svg>
+		
 		<h1>{greeting}</h1>
+		<ConnectFreighter />
+		
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			<Counter />
 		</p>
-		<ul role="list" class="link-card-grid">
+		
+		<!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
@@ -63,7 +70,7 @@ const greeting = result.join(" ");
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
-		</ul>
+		</ul> -->
 	</main>
 </Layout>
 
