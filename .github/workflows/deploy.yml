@@ -17,6 +17,11 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_SOROBAN_NETWORK_PASSPHRASE: ${{ secrets.PUBLIC_SOROBAN_NETWORK_PASSPHRASE }}
+      PUBLIC_SOROBAN_RPC_URL: ${{ secrets.PUBLIC_SOROBAN_RPC_URL }}
+      SOROBAN_ACCOUNT: ${{ secrets.SOROBAN_ACCOUNT }}
+      SOROBAN_NETWORK: ${{ secrets.SOROBAN_NETWORK }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
