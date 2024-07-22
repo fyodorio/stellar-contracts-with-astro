@@ -7,7 +7,7 @@ Current value: <strong id="current-value" aria-live="polite">???</strong><br />
   import incrementor from "../contracts/soroban_increment_contract";
   import { isAllowed, getPublicKey, signTransaction } from '@stellar/freighter-api';
   
-  const button = document.querySelector("[data-increment]");
+  const button = document.querySelector("[data-increment]") as HTMLButtonElement;
   const currentValue = document.querySelector("#current-value");
   
   if (await isAllowed()) {
