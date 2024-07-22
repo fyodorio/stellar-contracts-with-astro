@@ -10,4 +10,7 @@ export default defineConfig({
       https: true,
     },
   },
+  // https://docs.astro.build/en/guides/deploy/github/
+  site: 'https://stellar-dapps.github.io',
+  base: '/stellar-contracts-with-astro'
 });
