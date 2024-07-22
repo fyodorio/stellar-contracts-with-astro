@@ -24,8 +24,8 @@
   import { isAllowed, setAllowed, getUserInfo } from '@stellar/freighter-api';
 
   const wrap = document.querySelector('#freighter-wrap');
-  const ellipsis = document.querySelector('#freighter-wrap .ellipsis');
-  const button = document.querySelector('[data-connect]');
+  const ellipsis = document.querySelector('#freighter-wrap .ellipsis') as HTMLElement;
+  const button = document.querySelector('[data-connect]') as HTMLButtonElement;
 
   async function getPk() {
     const { publicKey } = await getUserInfo();

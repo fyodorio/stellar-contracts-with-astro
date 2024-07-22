@@ -13,6 +13,7 @@
   "name": "soroban-hello-world",
   "scripts": {
     "astro": "astro",
+    "prebuild": "npm run init",
     "build": "astro check && astro build",
     "dev": "npm run init && astro dev",
     "init": "node initialize.js",
