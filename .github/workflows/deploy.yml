@@ -23,6 +23,12 @@ jobs:
       SOROBAN_ACCOUNT: ${{ secrets.SOROBAN_ACCOUNT }}
       SOROBAN_NETWORK: ${{ secrets.SOROBAN_NETWORK }}
     steps:
+      - name: Install Rust roolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Add wasm target
+        run: rustup target add wasm32-unknown-unknown
+      - name: Install Stellar CLI
+        run: cargo install --locked stellar-cli --features opt
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
